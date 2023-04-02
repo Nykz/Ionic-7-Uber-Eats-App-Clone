@@ -1,0 +1,13 @@
+swiper {
+    height: 100%;
+    div {
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .transformButton {
+            // transform: translateY(80vh);
+            margin-top: 80vh;
+        }
+    }
+}

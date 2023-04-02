@@ -1,0 +1,22 @@
+<ion-content color="dark">
+  <ion-grid class="ion-no-padding">
+    <ion-label class="ion-padding-horizontal" color="light">Device location off</ion-label>
+    <p class="ion-padding-horizontal">
+      <ion-text color="light">
+        Enabling your location helps us deliver right at your doorstep
+      </ion-text>
+    </p>
+    <ion-row>
+      <ion-col size="5">
+        <ion-button (click)="dismissPopover(false)" size="small" shape="round" expand="block" fill="outline" color="light">
+          <ion-text>No, Thanks!</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="7">
+        <ion-button (click)="dismissPopover(true)" size="small" shape="round" expand="block" fill="outline" color="light">
+          <ion-text>Enable location</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

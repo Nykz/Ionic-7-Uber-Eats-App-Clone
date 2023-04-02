@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button shape="round" color="light" fill="solid">
+        <ion-icon slot="icon-only" size="small" name="heart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ restaurant?.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="bg-image" [style.background-image]="'url(' + restaurant?.cover + ')'"></div>
+
+  <ion-grid>
+    <ion-row class="ion-padding-start">
+      <ion-col size="12">
+        <h2><b>{{restaurant?.name}}</b></h2>
+      </ion-col>
+      <ion-col size="12">
+        <ion-icon name="star" color="dark"></ion-icon>
+        <ion-text color="dark"><b>{{restaurant?.rating}}</b></ion-text>
+        <span class="emoji">&#8226;</span>
+        <ion-text color="dark"><b>{{getCuisines(restaurant?.cuisines)}}</b></ion-text>
+        <span class="emoji">&#8226;</span>
+        <ion-text color="dark"><b>₹{{restaurant?.price}} for two</b></ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <ion-icon name="time-outline" color="medium"></ion-icon>
+        <ion-text color="dark">Delivery in {{restaurant?.delivery_time}} mins</ion-text>
+        <span class="emoji">&#8226;</span>
+        <ion-icon name="location-outline" color="medium"></ion-icon>
+        <ion-text color="dark">{{restaurant?.distance}} kms. away</ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngFor="let category of categories">
+    <ion-list-header>
+      <ion-label>{{category?.name}}</ion-label>
+    </ion-list-header>
+    <ng-container *ngFor="let item of items">
+      <ion-item *ngIf="category?.id == item?.category_id" lines="full">
+        <ion-label>
+          <ion-text class="item">{{item?.name}}</ion-text>
+          <p class="price"><ion-text color="dark">₹{{item?.price}}</ion-text></p>
+          <p *ngIf="item?.desc" class="ion-text-wrap ion-text-justify">{{item?.desc}}</p>
+        </ion-label>
+        <ion-thumbnail slot="end" *ngIf="item?.cover">
+          <ion-img [src]="item?.cover"></ion-img>
+        </ion-thumbnail>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+</ion-content>

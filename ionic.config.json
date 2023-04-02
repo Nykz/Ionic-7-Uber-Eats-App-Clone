@@ -1,0 +1,7 @@
+{
+  "name": "uber-eats-customer-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

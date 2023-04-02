@@ -1,0 +1,38 @@
+ion-content {
+    .bg-image {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 20vh;
+    }
+
+    ion-row {
+        ion-col {
+            .emoji {
+                padding: 0 3px;
+            }
+        }
+    }
+
+    ion-list {
+        ion-item {
+            ion-label {
+                ion-text.item {
+                    font-weight: 450;
+                }
+                .price {
+                    padding: 3px 0;
+                }
+            }
+            ion-thumbnail {
+                width: 10vh;
+                height: 10vh;
+                ion-img {
+                    border-radius: 5px;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

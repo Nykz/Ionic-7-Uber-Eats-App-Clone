@@ -1,0 +1,25 @@
+<ion-grid class="ion-text-center">
+  <ion-row>
+    <ion-col>
+      <ion-icon 
+        *ngIf="model?.icon" 
+        [name]="model?.icon" 
+        [color]="model?.color">
+      </ion-icon>
+      <img *ngIf="model?.image" [src]="model?.image" />
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-label>
+        {{model?.title}}
+        <p *ngIf="model?.subTitle">
+          <ion-text>
+            {{model?.subTitle}}
+          </ion-text>
+        </p>
+      </ion-label>
+      
+    </ion-col>
+  </ion-row>
+</ion-grid>

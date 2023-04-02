@@ -1,0 +1,97 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title mode="md" class="ion-no-padding">
+      <ion-label>
+        <ion-text color="medium">NOW</ion-text>
+        <ion-icon name="arrow-forward-outline" color="medium"></ion-icon>
+        <ion-text><strong>{{loc}}</strong></ion-text>
+      </ion-label>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-row>
+    <swiper [config]="bannerConfig" class="banners">
+      <ng-template swiperSlide *ngFor="let banner of banners">
+        <img [src]="banner?.banner" />
+      </ng-template>
+    </swiper>
+  </ion-row>
+
+  <ion-row class="ion-text-center category" *ngIf="categories?.length > 0">
+    <swiper [config]="categoryConfig">
+      <ng-template swiperSlide *ngFor="let category of categories">
+        <div align="center">
+          <ion-avatar slot="start">
+            <img [src]="category?.image" />
+          </ion-avatar>
+        </div>
+        <ion-label class="ion-text-wrap">{{category?.name}}</ion-label>
+      </ng-template>
+    </swiper>
+  </ion-row>
+
+  <ion-row *ngIf="favorites?.length > 0">
+    <ion-col size="8">
+      <ion-label class="ion-margin-start heading">
+        Your favorites
+      </ion-label>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button fill="clear" color="medium" size="small">
+        VIEW ALL
+        <ion-icon color="primary" name="chevron-forward-circle-outline" slot="end"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <swiper [config]="restaurantConfig">
+      <ng-template swiperSlide *ngFor="let favorite of favorites">
+        <ion-card>
+          <app-restaurant [restaurant]="favorite" [routerLink]="['/', 'tabs', 'restaurants', favorite?.id]"></app-restaurant>
+        </ion-card>
+      </ng-template>
+    </swiper>
+  </ion-row>
+
+  <ion-row *ngIf="offers?.length > 0">
+    <ion-col size="8">
+      <ion-label class="ion-margin-start heading">
+        Top offers
+      </ion-label>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button fill="clear" color="medium" size="small">
+        VIEW ALL
+        <ion-icon color="primary" name="chevron-forward-circle-outline" slot="end"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <swiper [config]="restaurantConfig">
+      <ng-template swiperSlide *ngFor="let offer of offers">
+        <ion-card>
+          <app-restaurant [restaurant]="offer" [routerLink]="['/', 'tabs', 'restaurants', offer?.id]"></app-restaurant>
+        </ion-card>
+      </ng-template>
+    </swiper>
+  </ion-row>
+
+  <ion-list *ngIf="nearby?.length > 0">
+    <ion-row>
+      <ion-col size="8">
+        <ion-label class="ion-margin-start heading">
+          Nearby Restaurants
+        </ion-label>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button fill="clear" color="medium" size="small">
+          VIEW ALL
+          <ion-icon color="primary" name="chevron-forward-circle-outline" slot="end"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-item-group *ngFor="let item of nearby">
+      <app-restaurant [restaurant]="item" [routerLink]="['/', 'tabs', 'restaurants', item?.id]"></app-restaurant>
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>

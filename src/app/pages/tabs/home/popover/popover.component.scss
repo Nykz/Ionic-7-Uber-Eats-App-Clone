@@ -1,0 +1,14 @@
+ion-grid {
+    padding: 5px;
+    ion-label {
+        font-weight: bold;
+    }
+    ion-label, ion-text {
+        font-size: 0.9rem;
+    }
+    ion-button {
+        ion-text {
+            font-size: 0.75rem;
+        }
+    }
+}

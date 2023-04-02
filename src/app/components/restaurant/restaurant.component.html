@@ -1,0 +1,33 @@
+<div>
+  <img [src]="restaurant?.cover" />
+</div>
+
+<ion-item lines="none">
+  <ion-label class="ion-text-wrap">
+    <ion-text>
+      <strong>{{restaurant?.name}}</strong>
+    </ion-text>
+    <p>
+      <ion-text color="medium">
+        {{getCuisines(restaurant?.cuisines)}}
+      </ion-text>
+    </p>
+    <ion-row class="ion-text-center">
+      <ion-col size="3">
+        <ion-text>{{restaurant?.delivery_time}} mins</ion-text>
+      </ion-col>
+      <ion-col size="2" class="rating">
+        <ion-text>{{restaurant?.rating}}</ion-text>
+        <ion-icon name="star" color="dark"></ion-icon>
+      </ion-col>
+      <ion-col size="4">
+        <ion-text>₹{{restaurant?.price}} for two</ion-text>
+      </ion-col>
+    </ion-row>
+    <!-- <p *ngIf="restaurant?.distance">
+      <ion-text color="primary" class="distance">
+        {{restaurant?.distance}} kms away
+      </ion-text>
+    </p> -->
+  </ion-label>
+</ion-item>

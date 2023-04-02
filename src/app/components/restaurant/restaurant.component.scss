@@ -1,0 +1,37 @@
+div {
+    img {
+        height: 22vh;
+        width: 100%;
+    }
+}
+ion-item {
+    ion-label {
+        font-size: 0.95rem;
+    }
+    p {
+        ion-text {
+            font-size: 0.85rem;
+        }
+        ion-text.distance {
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    }
+    ion-row {
+        margin: 5px 0;
+        ion-col {
+            background: var(--ion-color-light);
+            ion-text {
+                font-size: 0.8rem;
+                font-weight: 400;
+            }
+        }
+        ion-col {
+            margin: 0 5px;
+            ion-icon {
+                margin-left: 2px;
+                transform: translateY(10%);
+            }
+        }
+    }
+}

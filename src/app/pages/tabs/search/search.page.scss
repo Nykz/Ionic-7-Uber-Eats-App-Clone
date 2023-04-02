@@ -1,0 +1,29 @@
+ion-content {
+    ion-input {
+        font-size: 1.2rem;
+    }
+    ion-card {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 14vh;
+        margin: auto;
+        ion-card-header {
+            height: 100%;
+            ion-card-title {
+                font-size: 1rem;
+                // transform: translateY(-1vh);
+            }
+        }
+    }
+    ion-list {
+        background: transparent;
+        ion-item-group {
+            margin-bottom: 2vh;
+        }
+    }
+}
+
+.transformCenter {
+    transform: translateY(35vh);
+}
